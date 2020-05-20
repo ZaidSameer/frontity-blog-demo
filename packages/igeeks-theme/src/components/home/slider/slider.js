@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Fragment} from "react";
 import Slider from "@farbenmeer/react-spring-slider";
 import { Button, Text, Box, Flex, Image } from "rebass";
 import { css, connect } from "frontity";
@@ -52,9 +52,9 @@ const Carousel = ({ state, data }) => {
                 // RightArrowComponent={rightArrowComponent}
                 auto={6000}
             >
-                {data.map(item => {
+                {data.map((item, index) => {
                     return (
-                        <>
+                        <Fragment key={index}>
                             {state.source.attachment[item.featured_media] && (
                                 <ProgressiveSlider
                                     style={imageStyle(state.source.attachment[item.featured_media].source_url)}
@@ -91,7 +91,7 @@ const Carousel = ({ state, data }) => {
                                     {item.title.rendered.replace("&#8217;s", "'s ")}
                                 </Text>
                             </div>
-                        </>
+                        </Fragment>
                     );
                 })}
             </Slider>
