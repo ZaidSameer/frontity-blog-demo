@@ -18,7 +18,7 @@ const cntanr = css`
 const Header = props => {
     const [show, setShow] = React.useState(false);
     return (
-        <Container type={"fluid"} backgroundColor={"transparent"} bg={"transparent"} css={cntanr}>
+        <Container type={"fluid"} css={cntanr}>
             {show && <SideMenu />}
             <Flex flexWrap="wrap" py={[0, 0, 0, "15px"]}>
                 <Box p={3} width={[1 / 3]} color="white" bg="primary" style={{ zIndex: 100 }}>
